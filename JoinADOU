@@ -1,0 +1,5 @@
+$DomainName = " "
+$Oupath = "OU= ,OU= ,OU= ,DC= "
+$Cred = "DOMAIN/account"
+
+Add-Computer -DomainName $DomainName -OUPath $Oupath -credential $Cred -Restart
