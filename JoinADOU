@@ -1,5 +1,7 @@
 $DomainName = " "
 $Oupath = "OU= ,OU= ,OU= ,DC= "
-$Cred = "DOMAIN/account"
+$ADacc = "Domain/account"
+$PSWD = ConvertTO-SecureString " " -AsPlainText -Force
+$Cred = New-Object System.Management.Automation.PSCredential($ADacc,$PSWD)
 
 Add-Computer -DomainName $DomainName -OUPath $Oupath -credential $Cred -Restart
